@@ -3,7 +3,7 @@ import bpy
 bl_info = {
     "name" : "Check blender version",
     "author" : "12funkeys",
-    "version" : (0,1), 
+    "version" : (2,1), 
     "blender" : (2, 80, 0),
     "location" : "Info header", 
     "description" : "check .blender version", 
