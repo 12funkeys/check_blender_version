@@ -1,11 +1,10 @@
 import bpy
-from bpy.types import Header, Menu
 
 bl_info = {
     "name" : "Check blender version",
     "author" : "12funkeys",
     "version" : (0,1), 
-    "blender" : (2, 7, 2),
+    "blender" : (2, 80, 0),
     "location" : "Info header", 
     "description" : "check .blender version", 
     "warning" : "",
@@ -14,9 +13,10 @@ bl_info = {
     "category" : "System"
 }
 
-class INFO_Bl_Ver(Header):
+class INFO_HT_Ver(bpy.types.Header):
 
-    bl_space_type = 'INFO'
+    bl_region_type = 'HEADER'
+    bl_space_type = 'TOPBAR'
     
     def draw(self, context):
         layout = self.layout
@@ -43,12 +43,10 @@ class INFO_Bl_Ver(Header):
             row.label(text=bl_file_ver, icon='FILE_BLEND', translate=False)
 
 def register():
-    bpy.utils.register_class(INFO_Bl_Ver)
-
+    bpy.utils.register_class(INFO_HT_Ver)
 
 def unregister():
-    bpy.utils.unregister_class(INFO_Bl_Ver)
-
+    bpy.utils.unregister_class(INFO_HT_Ver)
 
 if __name__ == "__main__":
     register()
